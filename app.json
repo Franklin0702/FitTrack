@@ -1,25 +1,44 @@
 {
   "expo": {
-    "name": "fittrack-scaffold",
-    "slug": "fittrack-scaffold",
+    "name": "Fit Track",
+    "slug": "fittrack",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "backgroundColor": "#F6F8F5",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fittrack.local",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
+      "package": "com.fittrack.local",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "backgroundColor": "#27775A",
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "monochromeImage": "./assets/adaptive-icon.png"
       },
-      "predictiveBackGestureEnabled": false
+      "allowBackup": false,
+      "predictiveBackGestureEnabled": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "name": "Fit Track",
+      "shortName": "Fit Track",
+      "description": "Your private nutrition, hydration, movement, and progress journal.",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-sqlite",
+      "expo-sharing",
+      "expo-notifications",
+      "expo-router",
+      "expo-font",
+      "expo-splash-screen"
+    ],
+    "scheme": "fittrack"
   }
 }

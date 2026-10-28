@@ -1,22 +1,52 @@
 {
-  "name": "fittrack-scaffold",
+  "name": "fittrack",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "expo-router/entry",
   "dependencies": {
     "expo": "~58.0.20",
+    "expo-constants": "~58.0.13",
+    "expo-document-picker": "~58.0.4",
+    "expo-file-system": "~58.0.12",
+    "expo-font": "~58.0.10",
+    "expo-linking": "~58.0.14",
+    "expo-notifications": "~58.1.6",
+    "expo-router": "~58.0.27",
+    "expo-sharing": "~58.0.20",
+    "expo-splash-screen": "~58.0.11",
+    "expo-sqlite": "~58.0.14",
     "expo-status-bar": "~58.0.4",
     "react": "19.3.0",
-    "react-native": "0.88.0"
+    "react-dom": "19.3.0",
+    "react-native": "0.88.0",
+    "react-native-safe-area-context": "~5.10.1",
+    "react-native-screens": "~4.30.0",
+    "react-native-svg": "15.16.0",
+    "react-native-web": "^0.21.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.1",
     "@types/react": "~19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-expo": "~58.0.4",
+    "prettier": "^3.9.10",
+    "sharp": "^0.35.5",
+    "tsx": "^4.23.15",
     "typescript": "~6.0.3"
   },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write App.tsx index.ts src tests scripts playwright.config.ts app.json package.json tsconfig.json SETUP.md",
+    "test": "tsx --test tests/model.test.ts",
+    "test:e2e": "npm run build:web && playwright test",
+    "preview": "node scripts/serve-web.mjs",
+    "icons": "node scripts/generate-icons.mjs",
+    "build:web": "expo export --platform web",
+    "build:mobile": "expo export --platform android --platform ios --output-dir dist-mobile",
+    "lint": "expo lint"
   },
   "private": true
 }
